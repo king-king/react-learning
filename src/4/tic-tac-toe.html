@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tic-tac-toe</title>
+    <style>
+        body {
+            font: 14px "Century Gothic", Futura, sans-serif;
+            margin: 20px;
+        }
+
+        ol,
+        ul {
+            padding-left: 30px;
+        }
+
+        .board-row:after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+        .status {
+            margin-bottom: 10px;
+        }
+
+        .square {
+            background: #fff;
+            border: 1px solid #999;
+            float: left;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 34px;
+            height: 34px;
+            margin-right: -1px;
+            margin-top: -1px;
+            padding: 0;
+            text-align: center;
+            width: 34px;
+        }
+
+        .square:focus {
+            outline: none;
+        }
+
+        .kbd-navigation .square:focus {
+            background: #ddd;
+        }
+
+        .game {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .game-info {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<div id="example"></div>
+<script src="../../lib/react.15.4.2.js"></script>
+<script src="../../lib/react-dom.15.4.2.js"></script>
+<script src="../../lib/babel.6.22.1.js"></script>
+<script type="text/babel" src="tic-tac-toe.jsx"></script>
+
+</html>
