@@ -4,15 +4,25 @@ class MyHello extends React.Component {
         this.state = {
             indexs: [0, 1, 2, 3, 4]
         };
+        console.log(this.props);
+    }
+    componentWillReceiveProps() {
+        console.log('componentWillReceiveProps');
+    }
+    componentDidMount() {
+        // render完毕
+        console.log('componentDidMount');
+        // console.log(ReactDOM.findDOMNode(this));
     }
     render() {
+        console.log('render');
         return React.createElement(
             'div',
             null,
             this.state.indexs.map(item => {
                 return React.createElement(
                     'div',
-                    { key: item },
+                    { className: 'item item-' + item, key: item },
                     item
                 );
             })
@@ -20,4 +30,10 @@ class MyHello extends React.Component {
     }
 }
 
-ReactDOM.render(React.createElement(MyHello, null), document.getElementById('example'));
+// setTimeout(() => {
+//     ReactDOM.render(
+//         <MyHello hello='no' />,
+//         document.getElementById('example')
+//     );
+// }, 3000);
+ReactDOM.render(React.createElement(MyHello, { hello: 'yes' }), document.getElementById('example'));
