@@ -5,18 +5,8 @@ const rename = require('gulp-rename');
 
 let src = 'test/**/*.jsx';
 
-gulp.task('default', function () {
-    gulp.watch([
-        'test/**/*.jsx'
-    ], function (e) {
-        //any changed detected, call build task
-        src = path.dirname(e.path);
-        console.log(src);
-        gulp.start('compile');
-    });
-});
-
-gulp.task('compile', function () {
+function compile() {
+    console.log('compile ...');
     return gulp.src(src + '/*.jsx')
         .pipe(babel({
             presets: ['react']
@@ -26,4 +16,18 @@ gulp.task('compile', function () {
             p.extname = ".js"
         }))
         .pipe(gulp.dest(src));
+}
+
+gulp.task('default', function () {
+    gulp.watch([
+        'test/**/*.jsx'
+    ], function (e) {
+        //any changed detected, call build task
+        src = path.dirname(e.path);
+        compile();
+    });
+});
+
+gulp.task('compile', function () {
+    return compile();
 });
