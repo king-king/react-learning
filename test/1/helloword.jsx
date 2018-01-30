@@ -22,14 +22,19 @@ class MyHello extends React.Component {
     }
 }
 
+function Alert(){
+    return <div>hello</div>
+}
 
-// setTimeout(() => {
-//     ReactDOM.render(
-//         <MyHello hello='no' />,
-//         document.getElementById('example')
-//     );
-// }, 3000);
+setTimeout(() => {
+    ReactDOM.unmountComponentAtNode(
+        document.getElementById('example')
+    );
+}, 3000);
 ReactDOM.render(
-    <MyHello  hello='yes' />,
-    document.getElementById('example')
+    <div><MyHello  hello='yes' /><Alert/></div>,
+    document.getElementById('example'),
+    ()=>{
+        console.log(document.getElementById('example').innerHTML)
+    }
 );

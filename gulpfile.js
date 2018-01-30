@@ -11,6 +11,9 @@ function compile() {
         .pipe(babel({
             presets: ['react']
         }))
+        .on('error', (e) => {
+            console.log(e);
+        })
         .pipe(rename(function (p) {
             p.basename = "main";
             p.extname = ".js";

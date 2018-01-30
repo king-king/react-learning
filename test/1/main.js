@@ -30,10 +30,22 @@ class MyHello extends React.Component {
     }
 }
 
-// setTimeout(() => {
-//     ReactDOM.render(
-//         <MyHello hello='no' />,
-//         document.getElementById('example')
-//     );
-// }, 3000);
-ReactDOM.render(React.createElement(MyHello, { hello: 'yes' }), document.getElementById('example'));
+function Alert() {
+    return React.createElement(
+        'div',
+        null,
+        'hello'
+    );
+}
+
+setTimeout(() => {
+    ReactDOM.unmountComponentAtNode(document.getElementById('example'));
+}, 3000);
+ReactDOM.render(React.createElement(
+    'div',
+    null,
+    React.createElement(MyHello, { hello: 'yes' }),
+    React.createElement(Alert, null)
+), document.getElementById('example'), () => {
+    console.log(document.getElementById('example').innerHTML);
+});
