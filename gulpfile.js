@@ -13,7 +13,7 @@ function compile() {
         }))
         .pipe(rename(function (p) {
             p.basename = "main";
-            p.extname = ".js"
+            p.extname = ".js";
         }))
         .pipe(gulp.dest(src));
 }
