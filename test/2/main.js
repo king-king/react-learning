@@ -7,7 +7,7 @@ class Switch extends React.Component {
         let commonStyle = { cursor: 'pointer', display: 'inline-block', height: '20px', textAlign: 'center', width: '100px', lineHeight: '20px' };
         this.commonStyle = commonStyle;
         this.selectStyle = _extends({}, commonStyle, {
-            backgroundColor: '#eee'
+            backgroundColor: '#333'
         });
     }
     onChange(i) {
@@ -31,4 +31,8 @@ class Switch extends React.Component {
     }
 }
 
-ReactDOM.render(React.createElement(Switch, { items: [{ txt: '西游记' }, { txt: '西部世界' }, { txt: '敦刻尔克' }] }), document.querySelector('#example'));
+function onChange(i) {
+    console.log(i);
+}
+
+ReactDOM.render(React.createElement(Switch, { onChange: onChange, items: [{ txt: '西游记' }, { txt: '西部世界' }, { txt: '敦刻尔克' }] }), document.querySelector('#example'));

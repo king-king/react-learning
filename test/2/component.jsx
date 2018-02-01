@@ -24,4 +24,8 @@ class Switch extends React.Component {
     }
 }
 
-ReactDOM.render(<Switch items={[{ txt: '西游记' }, { txt: '西部世界' }, { txt: '敦刻尔克' }]} />, document.querySelector('#example'));
+function onChange(i){
+    console.log(i);
+}
+
+ReactDOM.render(<Switch onChange={onChange} items={[{ txt: '西游记' }, { txt: '西部世界' }, { txt: '敦刻尔克' }]} />, document.querySelector('#example'));
