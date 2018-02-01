@@ -3,14 +3,14 @@ const path = require('path');
 const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 
-let src = 'test/**/*.jsx';
+let src = 'test/**';
 let delayId;
 
 function compile() {
     console.log('compile ...');
     return gulp.src(src + '/*.jsx')
         .pipe(babel({
-            presets: ['react']
+            presets: ['react',"stage-2"]
         }))
         .on('error', (e) => {
             console.log(e);
@@ -33,6 +33,6 @@ gulp.task('default', function () {
     });
 });
 
-gulp.task('compile', function () {
+gulp.task('c', function () {
     return compile();
 });

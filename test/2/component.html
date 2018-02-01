@@ -15,5 +15,22 @@
 <script src="../../lib/react.15.4.2.js"></script>
 <script src="../../lib/react-dom.15.4.2.js"></script>
 <script src="main.js"></script>
+<script>
+    class Student {
+        constructor() {
+            this.info = {
+                year: 432,
+                sex: "男"
+            };
+            this.sinfo = {
+                ...this.info,
+                name: "张三"
+            };
+        }
+    }
+    var s = new Student();
+    console.log(s);
+
+</script>
 
 </html>
