@@ -4,6 +4,7 @@ const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 
 let src = 'test/**/*.jsx';
+let delayId;
 
 function compile() {
     console.log('compile ...');
@@ -27,7 +28,8 @@ gulp.task('default', function () {
     ], function (e) {
         //any changed detected, call build task
         src = path.dirname(e.path);
-        compile();
+        clearTimeout(delayId);
+        delayId = setTimeout(compile, 3000);
     });
 });
 
