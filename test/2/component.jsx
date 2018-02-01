@@ -6,7 +6,7 @@ class Switch extends React.Component {
         this.commonStyle = commonStyle;
         this.selectStyle = {
             ...commonStyle,
-            backgroundColor: '#333'
+            backgroundColor: '#eee'
         };
     }
     onChange(i) {

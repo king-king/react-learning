@@ -7,7 +7,7 @@ class Switch extends React.Component {
         let commonStyle = { cursor: 'pointer', display: 'inline-block', height: '20px', textAlign: 'center', width: '100px', lineHeight: '20px' };
         this.commonStyle = commonStyle;
         this.selectStyle = _extends({}, commonStyle, {
-            backgroundColor: '#333'
+            backgroundColor: '#eee'
         });
     }
     onChange(i) {
