@@ -10,7 +10,7 @@ function compile() {
     console.log('compile ...');
     return gulp.src(src + '/*.jsx')
         .pipe(babel({
-            presets: ['react',"stage-2"]
+            presets: ["es2015", 'react', "stage-2"]
         }))
         .on('error', (e) => {
             console.log(e);

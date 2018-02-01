@@ -2,10 +2,17 @@ class Switch extends React.Component {
     constructor(props) {
         super(props);
         this.state = { curIndex: 0 };
-        let commonStyle = { cursor: 'pointer', display: 'inline-block', height: '20px', textAlign: 'center', width: '100px', lineHeight: '20px' };
-        this.commonStyle = commonStyle;
+        this.commonStyle = {
+            cursor: 'pointer',
+            display: 'inline-block',
+            height: '20px',
+            textAlign: 'center',
+            width: '100px',
+            lineHeight: '20px',
+            borderRadius:'2px'
+        };
         this.selectStyle = {
-            ...commonStyle,
+            ...this.commonStyle,
             backgroundColor: '#eee'
         };
     }
@@ -24,7 +31,7 @@ class Switch extends React.Component {
     }
 }
 
-function onChange(i){
+function onChange(i) {
     console.log(i);
 }
 
