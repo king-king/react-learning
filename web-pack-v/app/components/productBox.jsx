@@ -1,12 +1,12 @@
-var React = require('react');
-var ProductBox = React.createClass({
-    render: function () {
-        return (
-            <div className="productBox">
-                Hello World!
-            </div>
-        );
-    }
-});
+import React from 'react';
 
-module.exports = ProductBox;
+class Component1 extends React.Component {
+    render() {
+        return (
+            <div>Hello World!</div>
+        )
+    }
+}
+
+//导出组件
+export default Component1;
