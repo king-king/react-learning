@@ -1153,7 +1153,7 @@ var _Component2 = _interopRequireDefault(_Component);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_react2.default.render(_react2.default.createElement(_Component2.default, null), document.getElementById('content'));
+_reactDom2.default.render(_react2.default.createElement(_Component2.default, null), document.getElementById('content'));
 
 /***/ }),
 /* 18 */
