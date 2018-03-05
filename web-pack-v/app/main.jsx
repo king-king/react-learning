@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Component1 from './components/Component1.jsx';
+import { DatePicker } from 'antd';
+import 'antd/dist/antd.css';
+
 
 ReactDom.render(
-    <Component1 />,
+    <DatePicker />,
     document.getElementById('content')
 );
