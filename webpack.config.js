@@ -6,12 +6,17 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 
-let entries = {};
+let entries = {
+    libs: ['react', 'react-dom', 'redux', 'react-redux', 'axios']
+};
 let plugins = [
     new CleanWebpackPlugin('dist/*', {
         root: __dirname,
         verbose: true,
         dry: false
+    }),
+    new CommonsChunkPlugin({
+        name: "libs"
     })
 ];
 fs.readdirSync('src/static/js').filter((dirName) => {
@@ -24,7 +29,7 @@ fs.readdirSync('src/static/js').filter((dirName) => {
             template: `src/view/${chunk}.html/`,
             //自动生成HTML文件的名字,可以嵌套文件夹
             filename: `dist/view/${chunk}.html`,
-            chunks: [chunk]
+            chunks: ['libs', chunk]
         })
     );
 });
