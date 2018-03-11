@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
@@ -15,7 +16,7 @@ let plugins = [
         verbose: true,
         dry: false
     }),
-    new CommonsChunkPlugin({
+    new webpack.optimize.CommonsChunkPlugin({
         name: "libs"
     })
 ];
@@ -29,7 +30,7 @@ fs.readdirSync('src/static/js').filter((dirName) => {
             template: `src/view/${chunk}.html/`,
             //自动生成HTML文件的名字,可以嵌套文件夹
             filename: `dist/view/${chunk}.html`,
-            chunks: ['libs', chunk]
+            chunks: ['libs', 'chunk']
         })
     );
 });
