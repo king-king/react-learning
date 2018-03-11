@@ -37,7 +37,7 @@ module.exports = {
     },
     plugins: plugins.concat([
         new ExtractTextPlugin({
-            filename: "[name]_[contenthash:8].css"
+            filename: "[name].css"
         })
     ]),
     module: {
