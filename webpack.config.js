@@ -8,7 +8,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 
 
 let entries = {
-    libs: ['react', 'react-dom', 'redux', 'react-redux', 'axios', 'prop-types']
+    libs: ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk', 'axios', 'prop-types']
 };
 let plugins = [
     new CleanWebpackPlugin('dist/*', {
@@ -45,6 +45,12 @@ module.exports = {
         new ExtractTextPlugin({
             filename: "[name].css"
         })
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     },
+        //     sourceMap: false
+        // })
     ]),
     module: {
         //loaders加载器
