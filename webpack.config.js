@@ -8,7 +8,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 
 
 let entries = {
-    libs: ['react', 'react-dom', 'redux', 'react-redux', 'axios']
+    libs: ['react', 'react-dom', 'redux', 'react-redux', 'axios', 'prop-types']
 };
 let plugins = [
     new CleanWebpackPlugin('dist/*', {
@@ -29,7 +29,7 @@ fs.readdirSync('src/static/js').filter((dirName) => {
             //模板为同级目录下的index.html，为何不用写路径，是因为默认上下文问webpack.config.js所在的文件夹
             template: `src/view/${chunk}.html/`,
             //自动生成HTML文件的名字,可以嵌套文件夹
-            filename: `dist/view/${chunk}.html`,
+            filename: `view/${chunk}.html`,
             chunks: ['libs', 'chunk']
         })
     );
