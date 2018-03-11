@@ -30,7 +30,7 @@ fs.readdirSync('src/static/js').filter((dirName) => {
             template: `src/view/${chunk}.html/`,
             //自动生成HTML文件的名字,可以嵌套文件夹
             filename: `view/${chunk}.html`,
-            chunks: ['libs', 'chunk']
+            chunks: ['libs', chunk]
         })
     );
 });
@@ -39,7 +39,7 @@ module.exports = {
     entry: entries,
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: '[name].js',
+        filename: 'js/[name].js',
     },
     plugins: plugins.concat([
         new ExtractTextPlugin({
