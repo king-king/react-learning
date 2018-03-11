@@ -65,6 +65,9 @@ module.exports = {
             exclude: /node_modules/, //屏蔽不需要处理的文件（文件夹）（可选）
             use: 'babel-loader' //loader的名称（必须）
         }]
+    },
+    reslove: {
+        extensions: ['', '.js','.jsx', '.json', '.scss', '.css']
     }
 
 };
