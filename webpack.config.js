@@ -66,8 +66,8 @@ module.exports = {
             use: 'babel-loader' //loader的名称（必须）
         }]
     },
-    reslove: {
-        extensions: ['', '.js','.jsx', '.json', '.scss', '.css']
+    resolve: {
+        extensions: ['.js', '.jsx', '.json', '.scss', '.css']
     }
 
 };
