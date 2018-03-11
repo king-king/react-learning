@@ -35,7 +35,7 @@ module.exports = {
             test: /\.s?css$/,
             use: ExtractTextPlugin.extract({
                 fallback: "style-loader",
-                use: ["css-loader"]
+                use: ["css-loader", 'sass-loader']
             })
         }, {
             test: /\.(js|jsx)$/, //一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
