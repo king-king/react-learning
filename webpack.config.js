@@ -1,34 +1,45 @@
 const path = require('path');
+const fs = require('fs');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 
-module.exports = {
-    entry: {
-        index: path.resolve(__dirname, './web-pack-v/app/main.jsx')
-    },
-    output: {
-        path: path.resolve(__dirname, './web-pack-v/build'),
-        filename: 'bundle.js',
-    },
-    plugins: [
-        new CleanWebpackPlugin('web-pack-v/build/*', {
-            root: __dirname,
-            verbose: true,
-            dry: false
-        }),
+let entries = {};
+let plugins = [
+    new CleanWebpackPlugin('dist/*', {
+        root: __dirname,
+        verbose: true,
+        dry: false
+    })
+];
+fs.readdirSync('src/static/js').filter((dirName) => {
+    return dirName !== 'lib' && dirName !== 'util';
+}).forEach(chunk => {
+    entries[chunk] = path.resolve(__dirname, './src/static/js', chunk, 'index.jsx');
+    plugins.push(
         new htmlWebpackPlugin({
             //模板为同级目录下的index.html，为何不用写路径，是因为默认上下文问webpack.config.js所在的文件夹
-            template: 'web-pack-v/index.html',
+            template: `src/view/${chunk}.html/`,
             //自动生成HTML文件的名字,可以嵌套文件夹
-            filename: 'index.html',
-            chunks: ['index']
-        }),
+            filename: `dist/view/${chunk}.html`,
+            chunks: [chunk]
+        })
+    );
+});
+
+module.exports = {
+    entry: entries,
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: '[name].js',
+    },
+    plugins: plugins.concat([
         new ExtractTextPlugin({
             filename: "[name]_[contenthash:8].css"
         })
-    ],
+    ]),
     module: {
         //loaders加载器
         loaders: [{
