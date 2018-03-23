@@ -18,6 +18,9 @@ let plugins = [
     }),
     new webpack.optimize.CommonsChunkPlugin({
         name: "libs"
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+        name: "manifest"
     })
 ];
 fs.readdirSync('src/static/js').filter((dirName) => {
@@ -30,7 +33,7 @@ fs.readdirSync('src/static/js').filter((dirName) => {
             template: `src/view/${chunk}.html/`,
             //自动生成HTML文件的名字,可以嵌套文件夹
             filename: `view/${chunk}.html`,
-            chunks: ['libs', chunk]
+            chunks: ['manifest', 'libs', chunk]
         })
     );
 });
@@ -40,6 +43,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'static/js/[name].js',
+        // 用于设定css中引用img的路径
+        publicPath: "/dist/"
     },
     plugins: plugins.concat([
         new ExtractTextPlugin({
@@ -54,17 +59,28 @@ module.exports = {
     ]),
     module: {
         //loaders加载器
-        loaders: [{
-            test: /\.s?css$/,
-            use: ExtractTextPlugin.extract({
-                fallback: "style-loader",
-                use: ["css-loader", 'sass-loader']
-            })
-        }, {
-            test: /\.(js|jsx)$/, //一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
-            exclude: /node_modules/, //屏蔽不需要处理的文件（文件夹）（可选）
-            use: 'babel-loader' //loader的名称（必须）
-        }]
+        loaders: [
+            // loader
+            {
+                test: /\.s?css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader", 'sass-loader']
+                })
+            }, {
+                test: /\.(js|jsx)$/, //一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
+                exclude: /node_modules/, //屏蔽不需要处理的文件（文件夹）（可选）
+                use: 'babel-loader' //loader的名称（必须）
+            }, {
+                test: /\.(png|jpg|gif)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'static/img/[name]_[hash:8].[ext]'
+                    }
+                }]
+            }
+        ]
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.scss', '.css']
