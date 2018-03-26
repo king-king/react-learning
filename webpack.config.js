@@ -76,7 +76,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: 'static/img/[name]_[hash:8].[ext]'
+                        name: 'static/img/[name].[ext]'
                     }
                 }]
             }
