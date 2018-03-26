@@ -1,55 +1,13 @@
-webpackJsonp([2],{
+webpackJsonp([1],{
 
-/***/ 97:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 100:
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-var _main = __webpack_require__(98);
-
-var _main2 = _interopRequireDefault(_main);
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(10);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var lines = [{
-    name: '用户数据',
-    type: 'dir',
-    size: 3213
-}, {
-    name: 'UserData',
-    type: 'dir',
-    size: 123
-}, {
-    name: 'ProductData',
-    type: 'dir',
-    size: 11
-}, {
-    name: 'A-Data.csv',
-    type: 'file',
-    size: 3213
-}, {
-    name: 'W-Data.csv',
-    type: 'file',
-    size: 3213
-}, {
-    name: 'G-Data.csv',
-    type: 'file',
-    size: 3213
-}];
-_reactDom2.default.render(_react2.default.createElement(_main2.default, { lines: lines }), document.querySelector('#wrap'));
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 98:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67,11 +25,11 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(7);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(99);
+__webpack_require__(102);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -152,12 +110,12 @@ var Dir = function (_React$Component2) {
                     { className: 'header' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'fl', style: { width: '47%', paddingLeft: '15px', boxSizing: 'border-box' } },
+                        { className: 'fl', style: { textAlign: 'left', width: '47%', paddingLeft: '15px', boxSizing: 'border-box' } },
                         '\u6587\u4EF6\u540D'
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'fl', style: { width: '47%' } },
+                        { className: 'fl', style: { textAlign: 'left', width: '47%' } },
                         '\u6587\u4EF6\u5927\u5C0F'
                     )
                 ),
@@ -181,7 +139,203 @@ exports.default = Dir;
 
 /***/ }),
 
-/***/ 99:
+/***/ 102:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 103:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(5);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+__webpack_require__(104);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Path = function (_React$Component) {
+    _inherits(Path, _React$Component);
+
+    function Path(props) {
+        _classCallCheck(this, Path);
+
+        return _possibleConstructorReturn(this, (Path.__proto__ || Object.getPrototypeOf(Path)).call(this, props));
+    }
+
+    _createClass(Path, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var names = this.props.path === '' ? [] : this.props.path.split('/');
+            var curPath = [];
+            return _react2.default.createElement(
+                'div',
+                { className: 'path-component' },
+                names.map(function (item, i) {
+                    curPath.push(item);
+                    var cp = curPath.join('/');
+                    return !i ? _react2.default.createElement(
+                        'div',
+                        { key: i, onClick: function onClick() {
+                                _this2.props.onChange(cp);
+                            }, className: 'item' },
+                        item
+                    ) : _react2.default.createElement(
+                        'div',
+                        { key: i, onClick: function onClick() {
+                                _this2.props.onChange(cp);
+                            }, className: 'item' },
+                        _react2.default.createElement('span', null),
+                        item
+                    );
+                })
+            );
+        }
+    }]);
+
+    return Path;
+}(_react2.default.Component);
+
+Path.propTypes = {
+    onChange: _propTypes2.default.func,
+    path: _propTypes2.default.string
+};
+Path.defaultProps = {
+    onChange: function onChange() {},
+    path: ''
+};
+
+exports.default = Path;
+
+/***/ }),
+
+/***/ 104:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 97:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(10);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+__webpack_require__(98);
+
+__webpack_require__(100);
+
+var _main = __webpack_require__(101);
+
+var _main2 = _interopRequireDefault(_main);
+
+var _Path = __webpack_require__(103);
+
+var _Path2 = _interopRequireDefault(_Path);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var lines = [{
+    name: '用户数据',
+    type: 'dir',
+    size: 3213
+}, {
+    name: 'UserData',
+    type: 'dir',
+    size: 123
+}, {
+    name: 'ProductData',
+    type: 'dir',
+    size: 11
+}, {
+    name: 'A-Data.csv',
+    type: 'file',
+    size: 3213
+}, {
+    name: 'W-Data.csv',
+    type: 'file',
+    size: 3213
+}, {
+    name: 'G-Data.csv',
+    type: 'file',
+    size: 3213
+}];
+
+var Page = function (_React$Component) {
+    _inherits(Page, _React$Component);
+
+    function Page(props) {
+        _classCallCheck(this, Page);
+
+        return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).call(this, props));
+    }
+
+    _createClass(Page, [{
+        key: 'onPathChange',
+        value: function onPathChange(path) {
+            console.log(path);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _react2.default.Fragment,
+                null,
+                _react2.default.createElement(_Path2.default, { onChange: this.onPathChange, path: '文件空间/Data/Userdata/Dailydata' }),
+                _react2.default.createElement(_main2.default, { lines: lines })
+            );
+        }
+    }]);
+
+    return Page;
+}(_react2.default.Component);
+
+_reactDom2.default.render(_react2.default.createElement(Page, null), document.querySelector('#content'));
+
+/***/ }),
+
+/***/ 98:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

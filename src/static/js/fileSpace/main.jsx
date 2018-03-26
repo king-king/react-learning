@@ -1,6 +1,11 @@
-import Dir from '../lib/component/dir/main';
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import '../../style/common';
+import '../../style/fileSpace';
+
+import Dir from '../lib/component/dir/main.jsx';
+import Path from './component/Path.jsx';
 
 var lines = [
     {
@@ -29,4 +34,22 @@ var lines = [
         size: 3213
     }
 ];
-ReactDOM.render(<Dir lines={lines}></Dir>, document.querySelector('#wrap'));
+
+class Page extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    onPathChange(path) {
+        console.log(path)
+    }
+    render() {
+        return (
+            <React.Fragment>
+                <Path onChange={this.onPathChange} path={'文件空间/Data/Userdata/Dailydata'}></Path>
+                <Dir lines={lines}></Dir>
+            </React.Fragment>
+        );
+    }
+}
+
+ReactDOM.render(<Page></Page>, document.querySelector('#content'));

@@ -43,8 +43,8 @@ class Dir extends React.Component {
         return (
             <div className='dir-component'>
                 <div className='header'>
-                    <div className='fl' style={{ width: '47%', paddingLeft: '15px', boxSizing: 'border-box' }}>文件名</div>
-                    <div className='fl' style={{ width: '47%' }}>文件大小</div>
+                    <div className='fl' style={{ textAlign: 'left', width: '47%', paddingLeft: '15px', boxSizing: 'border-box' }}>文件名</div>
+                    <div className='fl' style={{ textAlign: 'left', width: '47%' }}>文件大小</div>
                 </div >
                 {
                     this.props.lines.map((cf, i) => {

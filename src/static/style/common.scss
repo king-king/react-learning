@@ -1,0 +1,29 @@
+* {
+    font-family: '微软雅黑', sans-serif;
+}
+
+.header {
+    width: 1280px;
+    height: 110px;
+    line-height: 110px;
+    font-size: 18px;
+    color: #001F51;
+    margin: 0 auto;
+    div {
+        width: 180px;
+        cursor: pointer;
+        text-align: center;
+    }
+    div:hover {
+        font-weight: bold;
+        color: #0363F7;
+    }
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}

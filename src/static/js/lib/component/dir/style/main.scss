@@ -1,11 +1,9 @@
 .dir-component {
-    background-color: #F3F9F9;
     .header {
         height: 50px;
         line-height: 50px;
         font-size: 16px;
         color: #001F51;
-        font-family: '微软雅黑', sans-serif;
         font-weight: bolder;
         border-bottom: 1px solid #E7E7E7;
         margin-bottom: 10px;
@@ -15,7 +13,6 @@
         line-height: 40px;
         font-size: 14px;
         color: #001F51;
-        font-family: '微软雅黑', sans-serif;
         &.odd {
             background-color: #fff;
         }
@@ -54,11 +51,5 @@
             right: 15px;
             cursor: pointer;
         }
-    }
-    .fr {
-        float: right;
-    }
-    .fl {
-        float: left;
     }
 }
