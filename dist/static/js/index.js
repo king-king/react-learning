@@ -1,13 +1,46 @@
 webpackJsonp([1],{
 
-/***/ 100:
+/***/ 101:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(102);
+
+__webpack_require__(103);
+
+var _axios = __webpack_require__(13);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var good = document.createElement('div');
+good.classList.add('btn');
+good.innerHTML = 'good';
+document.body.appendChild(good);
+good.onclick = function () {
+    _axios2.default.get('http://127.0.0.1:8080/good.ajax').then(function (res) {
+        console.log('结束', res);
+    });
+};
+
+var err = document.createElement('div');
+err.classList.add('btn');
+err.innerHTML = 'err';
+document.body.appendChild(err);
+
+/***/ }),
+
+/***/ 102:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 101:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40,39 +73,6 @@ _axios2.default.interceptors.response.use(function (response) {
     return Promise.reject(error);
 });
 
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(100);
-
-__webpack_require__(101);
-
-var _axios = __webpack_require__(13);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var good = document.createElement('div');
-good.classList.add('btn');
-good.innerHTML = 'good';
-document.body.appendChild(good);
-good.onclick = function () {
-    _axios2.default.get('http://127.0.0.1:8080/good.ajax').then(function (res) {
-        console.log('结束', res);
-    });
-};
-
-var err = document.createElement('div');
-err.classList.add('btn');
-err.innerHTML = 'err';
-document.body.appendChild(err);
-
 /***/ })
 
-},[99]);
+},[101]);

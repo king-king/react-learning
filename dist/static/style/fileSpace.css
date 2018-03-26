@@ -1,0 +1,52 @@
+@charset "UTF-8";
+.dir-component {
+  background-color: #F3F9F9; }
+  .dir-component .header {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #001F51;
+    font-family: '\5FAE\8F6F\96C5\9ED1', sans-serif;
+    font-weight: bolder;
+    border-bottom: 1px solid #E7E7E7;
+    margin-bottom: 10px; }
+  .dir-component .line {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #001F51;
+    font-family: '\5FAE\8F6F\96C5\9ED1', sans-serif; }
+    .dir-component .line.odd {
+      background-color: #fff; }
+    .dir-component .line.even {
+      background-color: #F3F9F9; }
+    .dir-component .line .name {
+      width: 47%; }
+      .dir-component .line .name .type-icon {
+        position: relative;
+        top: 9px;
+        left: 15px;
+        height: 22px;
+        width: 22px;
+        display: inline-block; }
+        .dir-component .line .name .type-icon.dir {
+          background: url(/dist/static/img/dir-icon.png) center center no-repeat;
+          background-size: 22px 22px; }
+        .dir-component .line .name .type-icon.file {
+          background: url(/dist/static/img/file-icon.png) center center no-repeat;
+          background-size: 22px 22px; }
+    .dir-component .line .size {
+      width: 20%; }
+    .dir-component .line .edit {
+      width: 22px;
+      height: 22px;
+      background: url(/dist/static/img/edit-icon.png) center center no-repeat;
+      background-size: 22px 22px;
+      position: relative;
+      top: 9px;
+      right: 15px;
+      cursor: pointer; }
+  .dir-component .fr {
+    float: right; }
+  .dir-component .fl {
+    float: left; }

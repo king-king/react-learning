@@ -1,46 +1,64 @@
-.line {
-    height: 40px;
-    line-height: 40px;
-    font-size: 14px;
-    color: #001F51;
-    font-family: '微软雅黑', sans-serif;
-    &.odd {
-        background-color: #F3F9F9;
+.dir-component {
+    background-color: #F3F9F9;
+    .header {
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        color: #001F51;
+        font-family: '微软雅黑', sans-serif;
+        font-weight: bolder;
+        border-bottom: 1px solid #E7E7E7;
+        margin-bottom: 10px;
     }
-    &.even {
-        background-color: white;
-    }
-    .name {
-        width: 47%;
-        .type-icon {
-            height: 22px;
-            width: 22px;
-            display: inline-block;
-            &.dir {
-                background: url('../img/dir-icon.png') center center no-repeat;
-                background-size: 22px 22px;
-            }
-            &.file {
-                background: url('../img/file-icon.png') center center no-repeat;
-                background-size: 22px 22px;
+    .line {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        color: #001F51;
+        font-family: '微软雅黑', sans-serif;
+        &.odd {
+            background-color: #fff;
+        }
+        &.even {
+            background-color: #F3F9F9;
+        }
+        .name {
+            width: 47%;
+            .type-icon {
+                position: relative;
+                top: 9px;
+                left: 15px;
+                height: 22px;
+                width: 22px;
+                display: inline-block;
+                &.dir {
+                    background: url('../img/dir-icon.png') center center no-repeat;
+                    background-size: 22px 22px;
+                }
+                &.file {
+                    background: url('../img/file-icon.png') center center no-repeat;
+                    background-size: 22px 22px;
+                }
             }
         }
+        .size {
+            width: 20%;
+        }
+        .edit {
+            width: 22px;
+            height: 22px;
+            background: url('../img/edit-icon.png') center center no-repeat;
+            background-size: 22px 22px;
+            position: relative;
+            top: 9px;
+            right: 15px;
+            cursor: pointer;
+        }
     }
-    .size {
-        width: 20%;
+    .fr {
+        float: right;
     }
-    .edit {
-        width: 22px;
-        height: 22px;
-        background: url('../img/edit-icon.png') center center no-repeat;
-        background-size: 22px 22px;
+    .fl {
+        float: left;
     }
-}
-
-.fr {
-    float: right;
-}
-
-.fl {
-    float: left;
 }

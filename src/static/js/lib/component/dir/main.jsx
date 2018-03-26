@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './style/main';
+
 class Line extends React.Component {
     constructor(props) {
         super(props);
@@ -8,21 +10,21 @@ class Line extends React.Component {
     render() {
         return (
             <div className={'line ' + (this.props.index % 2 === 0 ? 'even' : 'odd')}>
-                <div classnName='name fl'>
+                <div className='name fl'>
                     <span className={'type-icon ' + this.props.type}></span>
-                    <span>{this.props.name}</span>
+                    <span style={{ position: 'relative', 'left': '60px' }}>{this.props.name}</span>
                 </div>
-                <div classnName='size fl'>{this.props.size}</div>
-                <span classnName='edit line-icon fl'></span>
+                <div className='size fl'>{this.props.size}</div>
+                <span className='edit line-icon fr'></span>
             </div>
         );
     }
 }
-Line.PropTypes = {
+Line.propTypes = {
     name: PropTypes.string,
     index: PropTypes.number,
     type: PropTypes.string,
-    size: PropTypes.string
+    size: PropTypes.number
 };
 Line.defaultProps = {
     index: 0,
@@ -39,9 +41,9 @@ class Dir extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='dir-component'>
                 <div className='header'>
-                    <div className='fl' style={{ width: '47%' }}>文件名</div>
+                    <div className='fl' style={{ width: '47%', paddingLeft: '15px', boxSizing: 'border-box' }}>文件名</div>
                     <div className='fl' style={{ width: '47%' }}>文件大小</div>
                 </div >
                 {
