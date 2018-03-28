@@ -9,6 +9,7 @@
     },
     "scripts": {
         "build": "webpack",
+        "release": "cross-env NODE_ENV=production npm run build",
         "dev": "node webpack.dev.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -29,6 +30,7 @@
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-2": "^6.24.1",
         "clean-webpack-plugin": "^0.1.18",
+        "cross-env": "^5.1.4",
         "css-loader": "^0.28.10",
         "extract-text-webpack-plugin": "^3.0.2",
         "file-loader": "^1.1.11",

@@ -6,6 +6,8 @@ const WebpackDevServer = require('webpack-dev-server');
 
 
 config.output.publicPath = 'http://localhost:9000/';
+config.devtool = "#eval"; // 调试版要开启sourcemap
+config.plugins.shift(); // 调试版不需要清空dist文件夹
 
 const compiler = webpack(config);
 const devServer = new WebpackDevServer(compiler, {
@@ -18,7 +20,6 @@ const devServer = new WebpackDevServer(compiler, {
     },
     historyApiFallback: true,
 });
-console.log('new')
 devServer.listen(9000, 'localhost', function () {
     console.log();
 });
