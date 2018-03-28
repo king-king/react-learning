@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import '../../style/common';
 import '../../style/fileSpace';
 
-import Dir from '../lib/component/dir/main.jsx';
+import Dir from './component/Dir.jsx';
 import Path from './component/Path.jsx';
 
 var lines = [

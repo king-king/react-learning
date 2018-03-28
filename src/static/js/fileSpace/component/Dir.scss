@@ -1,0 +1,55 @@
+.dir-component {
+    .header {
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        color: #001F51;
+        font-weight: bolder;
+        border-bottom: 1px solid #E7E7E7;
+        margin-bottom: 10px;
+    }
+    .line {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        color: #001F51;
+        &.odd {
+            background-color: #fff;
+        }
+        &.even {
+            background-color: #F3F9F9;
+        }
+        .name {
+            width: 47%;
+            .type-icon {
+                position: relative;
+                top: 6px;
+                left: 15px;
+                height: 22px;
+                width: 22px;
+                display: inline-block;
+                &.dir {
+                    background: url('./img/dir-icon.png') center center no-repeat;
+                    background-size: 22px 22px;
+                }
+                &.file {
+                    background: url('./img/file-icon.png') center center no-repeat;
+                    background-size: 22px 22px;
+                }
+            }
+        }
+        .size {
+            width: 20%;
+        }
+        .edit {
+            width: 22px;
+            height: 22px;
+            background: url('./img/edit-icon.png') center center no-repeat;
+            background-size: 22px 22px;
+            position: relative;
+            top: 9px;
+            right: 15px;
+            cursor: pointer;
+        }
+    }
+}

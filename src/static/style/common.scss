@@ -11,12 +11,14 @@
     margin: 0 auto;
     div {
         width: 180px;
-        cursor: pointer;
         text-align: center;
-    }
-    div:hover {
-        font-weight: bold;
-        color: #0363F7;
+        a {
+            cursor: pointer;
+            transition: 0.3s linear;
+            &:hover {
+                color: #0363F7;
+            }
+        }
     }
 }
 
