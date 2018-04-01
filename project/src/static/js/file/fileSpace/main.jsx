@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import 'util/ajaxhook.js';
+
 import '../../../style/common';
 import '../../../style/fileSpace';
 

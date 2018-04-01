@@ -46,7 +46,10 @@ const config = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.scss', '.css']
+        extensions: ['.js', '.jsx', '.json', '.scss', '.css'],
+        alias: {
+            util: path.resolve(__dirname, '../src/static/js/util/')
+        }
     }
 };
 
