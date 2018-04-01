@@ -8,7 +8,7 @@
         "test": "test"
     },
     "scripts": {
-        "start": "webpack-dev-server --hot --config ./webpack/webpack.dev.start.js",
+        "start": "webpack-dev-server --hot --config ./webpack/webpack.dev.js",
         "build": "webpack  --config ./webpack/webpack.config.js",
         "release": "cross-env NODE_ENV=production npm run build"
     },
