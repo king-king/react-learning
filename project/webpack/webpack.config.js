@@ -17,7 +17,7 @@ let config = {
         path: path.resolve(__dirname, '../dist'),
         filename: `static/js/[name]${isProduction ? '[chunkhash:10]' : ''}.js`,
         // 用于设定css中引用img的路径
-        publicPath: '/project/dist/'
+        publicPath: '../../'
     },
     plugins: getPlugins(),
     module: {

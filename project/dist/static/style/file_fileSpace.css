@@ -54,17 +54,17 @@
       width: 22px;
       display: inline-block; }
       .dir-component .line .name .type-icon.dir {
-        background: url(/project/dist/static/img/dir-icon.png) center center no-repeat;
+        background: url(../../static/img/dir-icon.png) center center no-repeat;
         background-size: 22px 22px; }
       .dir-component .line .name .type-icon.file {
-        background: url(/project/dist/static/img/file-icon.png) center center no-repeat;
+        background: url(../../static/img/file-icon.png) center center no-repeat;
         background-size: 22px 22px; }
   .dir-component .line .size {
     width: 20%; }
   .dir-component .line .edit {
     width: 22px;
     height: 22px;
-    background: url(/project/dist/static/img/edit-icon.png) center center no-repeat;
+    background: url(../../static/img/edit-icon.png) center center no-repeat;
     background-size: 22px 22px;
     position: relative;
     top: 9px;
