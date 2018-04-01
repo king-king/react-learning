@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import axios from 'axios';
 import 'util/ajaxhook.js';
 
 import '../../../style/common';
@@ -43,6 +43,15 @@ class Page extends React.Component {
     }
     onPathChange(path) {
         console.log(path)
+    }
+    componentDidMount() {
+        axios.get('http://127.0.0.1:8124')
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
     render() {
         return (
