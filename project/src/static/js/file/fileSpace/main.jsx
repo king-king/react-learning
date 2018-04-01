@@ -45,7 +45,7 @@ class Page extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Path onChange={this.onPathChange} path={'文件空间/Data/Userdata/Dailydata'}></Path>
+                <Path onChange={this.onPathChange} path='文件空间/Data/Userdata/Dailydata' />
                 <Dir lines={lines} />
             </React.Fragment>
         );

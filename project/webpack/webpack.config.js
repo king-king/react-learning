@@ -8,16 +8,16 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production'; // 是否是发布版
 
-let entries = {
+const entries = {
     libs: ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk', 'axios', 'prop-types']
 };
-let config = {
+const config = {
     entry: entries,
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: `static/js/[name]${isProduction ? '[chunkhash:10]' : ''}.js`,
         // 用于设定css中引用img的路径
-        publicPath: '../../'
+        publicPath: ''
     },
     plugins: getPlugins(),
     module: {
@@ -52,7 +52,7 @@ let config = {
 
 // 组装插件
 function getPlugins() {
-    let plugins = [
+    const plugins = [
         new CleanWebpackPlugin('dist/*', {
             root: __dirname,
             verbose: true,
@@ -66,14 +66,12 @@ function getPlugins() {
         })
     ];
     // 处理html
-    fs.readdirSync('src/view/').filter((m) => {
-        return m !== 'common'; // 过滤掉common文件夹
-    }).forEach((moduleName) => {
+    fs.readdirSync('src/view/').filter(m => m !== 'common' /* 过滤掉common文件夹 */ ).forEach((moduleName) => {
         // 每个module内还有若干页面
         fs.readdirSync('src/view/' + moduleName).forEach((page) => {
             // 探查对应的js是否存在
-            let chunk = moduleName + '_' + page.replace('.html', '');
-            let isE = fs.existsSync(`src/static/js/${moduleName}/${page.replace('.html', '')}/main.jsx`);
+            const chunk = moduleName + '_' + page.replace('.html', '');
+            const isE = fs.existsSync(`src/static/js/${moduleName}/${page.replace('.html', '')}/main.jsx`);
             if (isE) {
                 entries[chunk] = path.resolve(__dirname, `../src/static/js/${moduleName}/${page.replace('.html', '')}/main.jsx`);
             }

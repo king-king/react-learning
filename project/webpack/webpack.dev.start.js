@@ -1,9 +1,8 @@
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 
-let config = require('./webpack.config');
-config.output.publicPath = 'http://localhost:9000/';
+const config = require('./webpack.config');
+
+config.output.publicPath = 'http://localhost:8080/';
 config.devtool = '#eval'; // 调试版要开启sourcemap
 config.plugins.shift(); // 调试版不需要清空dist文件夹
 
@@ -17,8 +16,7 @@ config.watchOptions = {
 // 开启显示id和名称的对应关系
 config.plugins.push(new NamedModulesPlugin());
 
-const compiler = webpack(config);
-const devServer = new WebpackDevServer(compiler, {
+config.devServer = {
     inline: true,
     compress: true,
     hot: true,
@@ -27,8 +25,8 @@ const devServer = new WebpackDevServer(compiler, {
         children: false,
         colors: true
     },
-    historyApiFallback: true
-});
-devServer.listen(9000, 'localhost', () => {
-    console.log('运行成功');
-});
+    historyApiFallback: true,
+    port: 8080
+};
+
+module.exports = config;
