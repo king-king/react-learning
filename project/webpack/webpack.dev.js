@@ -30,5 +30,5 @@ const devServer = new WebpackDevServer(compiler, {
     historyApiFallback: true
 });
 devServer.listen(9000, 'localhost', () => {
-    console.log();
+    console.log('运行成功');
 });
