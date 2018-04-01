@@ -15,25 +15,25 @@ let config = {
     entry: entries,
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: `static/js/[name]${isProduction?'[chunkhash:10]':''}.js`,
+        filename: `static/js/[name]${isProduction ? '[chunkhash:10]' : ''}.js`,
         // 用于设定css中引用img的路径
         publicPath: '/project/dist/'
     },
     plugins: getPlugins(),
     module: {
-        //loaders加载器
+        // loaders加载器
         loaders: [
             // loader
             {
                 test: /\.s?css$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: ["css-loader", 'sass-loader']
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
                 })
             }, {
-                test: /\.(js|jsx)$/, //一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
-                exclude: /node_modules/, //屏蔽不需要处理的文件（文件夹）（可选）
-                use: 'babel-loader' //loader的名称（必须）
+                test: /\.(js|jsx)$/, // 一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
+                exclude: /node_modules/, // 屏蔽不需要处理的文件（文件夹）（可选）
+                use: 'babel-loader' // loader的名称（必须）
             }, {
                 test: /\.(png|jpg|gif)$/,
                 use: [{
@@ -59,10 +59,10 @@ function getPlugins() {
             dry: false
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: "libs"
+            name: 'libs'
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: "manifest"
+            name: 'manifest'
         })
     ];
     // 处理html
@@ -87,12 +87,10 @@ function getPlugins() {
                 })
             );
         });
-    })
-    plugins.push(
-        new ExtractTextPlugin({
-            filename: `static/style/[name]${isProduction?'_[contenthash:10]':''}.css`
-        })
-    );
+    });
+    plugins.push(new ExtractTextPlugin({
+        filename: `static/style/[name]${isProduction ? '_[contenthash:10]' : ''}.css`
+    }));
     isProduction && plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -110,7 +108,5 @@ function getPlugins() {
     );
     return plugins;
 }
-
-
 
 module.exports = config;

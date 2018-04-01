@@ -1,9 +1,8 @@
-let config = require('./webpack.config');
-
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 
+let config = require('./webpack.config');
 config.output.publicPath = 'http://localhost:9000/';
 config.devtool = '#eval'; // 调试版要开启sourcemap
 config.plugins.shift(); // 调试版不需要清空dist文件夹
