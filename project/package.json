@@ -1,56 +1,61 @@
 {
-    "name": "react-learning",
-    "version": "1.0.0",
-    "description": "",
-    "main": "gulpfile.js",
-    "directories": {
-        "lib": "lib",
-        "test": "test"
-    },
-    "scripts": {
-        "build": "webpack  --config ./webpack/webpack.config.js",
-        "release": "cross-env NODE_ENV=production npm run build",
-        "dev": "node ./webpack/webpack.dev.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/king-king/react-learning.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/king-king/react-learning/issues"
-    },
-    "homepage": "https://github.com/king-king/react-learning#readme",
-    "devDependencies": {
-        "babel-core": "^6.26.0",
-        "babel-loader": "^7.1.3",
-        "babel-preset-env": "^1.6.1",
-        "babel-preset-react": "^6.24.1",
-        "babel-preset-stage-2": "^6.24.1",
-        "clean-webpack-plugin": "^0.1.18",
-        "cross-env": "^5.1.4",
-        "css-loader": "^0.28.10",
-        "extract-text-webpack-plugin": "^3.0.2",
-        "file-loader": "^1.1.11",
-        "html-loader": "^0.5.5",
-        "html-webpack-plugin": "^3.0.4",
-        "mime-types": "^2.1.18",
-        "node-sass": "^4.7.2",
-        "sass-loader": "^6.0.7",
-        "style-loader": "^0.20.2",
-        "webpack": "^3.11.0",
-        "webpack-dev-server": "^2.11.0"
-    },
-    "dependencies": {
-        "antd": "^3.2.3",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
-        "axios": "^0.18.0",
-        "prop-types": "^15.6.1",
-        "react-redux": "^5.0.7",
-        "redux": "^3.7.2",
-        "redux-thunk": "^2.2.0"
-    }
+  "name": "react-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "webpack  --config ./webpack/webpack.config.js",
+    "release": "cross-env NODE_ENV=production npm run build",
+    "dev": "node ./webpack/webpack.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/king-king/react-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/king-king/react-learning/issues"
+  },
+  "homepage": "https://github.com/king-king/react-learning#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.18",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.10",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.0.4",
+    "mime-types": "^2.1.18",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.0"
+  },
+  "dependencies": {
+    "antd": "^3.2.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "axios": "^0.18.0",
+    "prop-types": "^15.6.1",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  }
 }
