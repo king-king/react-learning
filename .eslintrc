@@ -4,6 +4,8 @@
     },
     "extends": "airbnb",
     "rules": {
+        "linebreak-style": ["error", "unix"],
+        "func-names": ["error", "never"],
         "semi": 2,
         "comma-dangle": ["error", "never"],
         "indent": ["error", 4]
