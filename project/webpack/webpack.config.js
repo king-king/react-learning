@@ -96,7 +96,14 @@ function getPlugins() {
     isProduction && plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {
-                warnings: false
+                drop_console: true,
+                warnings: false,
+                collapse_vars: true,
+                reduce_vars: true
+            },
+            output: {
+                comments: false,
+                beautify: false
             },
             sourceMap: false
         })
