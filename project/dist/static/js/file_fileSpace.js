@@ -1,115 +1,13 @@
 webpackJsonp([1],{
 
-/***/ 93:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(14);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-__webpack_require__(94);
-
-__webpack_require__(95);
-
-var _Dir = __webpack_require__(96);
-
-var _Dir2 = _interopRequireDefault(_Dir);
-
-var _Path = __webpack_require__(98);
-
-var _Path2 = _interopRequireDefault(_Path);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var lines = [{
-    name: '用户数据',
-    type: 'dir',
-    size: 3213
-}, {
-    name: 'UserData',
-    type: 'dir',
-    size: 123
-}, {
-    name: 'ProductData',
-    type: 'dir',
-    size: 11
-}, {
-    name: 'A-Data.csv',
-    type: 'file',
-    size: 3213
-}, {
-    name: 'W-Data.csv',
-    type: 'file',
-    size: 3213
-}, {
-    name: 'G-Data.csv',
-    type: 'file',
-    size: 3213
-}];
-
-var Page = function (_React$Component) {
-    _inherits(Page, _React$Component);
-
-    function Page(props) {
-        _classCallCheck(this, Page);
-
-        return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).call(this, props));
-    }
-
-    _createClass(Page, [{
-        key: 'onPathChange',
-        value: function onPathChange(path) {
-            console.log(path);
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                _react2.default.Fragment,
-                null,
-                _react2.default.createElement(_Path2.default, { onChange: this.onPathChange, path: '文件空间/Data/Userdata/Dailydata' }),
-                _react2.default.createElement(_Dir2.default, { lines: lines })
-            );
-        }
-    }]);
-
-    return Page;
-}(_react2.default.Component);
-
-_reactDom2.default.render(_react2.default.createElement(Page, null), document.querySelector('#content'));
-
-/***/ }),
-
-/***/ 94:
+/***/ 100:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 95:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 96:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -127,11 +25,11 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(6);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(97);
+__webpack_require__(102);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -241,14 +139,14 @@ exports.default = Dir;
 
 /***/ }),
 
-/***/ 97:
+/***/ 102:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 98:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -264,11 +162,11 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(6);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(99);
+__webpack_require__(104);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -335,6 +233,158 @@ exports.default = Path;
 
 /***/ }),
 
+/***/ 104:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 97:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(15);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _axios = __webpack_require__(12);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+__webpack_require__(98);
+
+__webpack_require__(99);
+
+__webpack_require__(100);
+
+var _Dir = __webpack_require__(101);
+
+var _Dir2 = _interopRequireDefault(_Dir);
+
+var _Path = __webpack_require__(103);
+
+var _Path2 = _interopRequireDefault(_Path);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var lines = [{
+    name: '用户数据',
+    type: 'dir',
+    size: 3213
+}, {
+    name: 'UserData',
+    type: 'dir',
+    size: 123
+}, {
+    name: 'ProductData',
+    type: 'dir',
+    size: 11
+}, {
+    name: 'A-Data.csv',
+    type: 'file',
+    size: 3213
+}, {
+    name: 'W-Data.csv',
+    type: 'file',
+    size: 3213
+}, {
+    name: 'G-Data.csv',
+    type: 'file',
+    size: 3213
+}];
+
+var Page = function (_React$Component) {
+    _inherits(Page, _React$Component);
+
+    function Page(props) {
+        _classCallCheck(this, Page);
+
+        return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).call(this, props));
+    }
+
+    _createClass(Page, [{
+        key: 'onPathChange',
+        value: function onPathChange(path) {
+            console.log(path);
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            _axios2.default.get('http://127.0.0.1:8124').then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _react2.default.Fragment,
+                null,
+                _react2.default.createElement(_Path2.default, { onChange: this.onPathChange, path: '\u6587\u4EF6\u7A7A\u95F4/Data/Userdata/Dailydata' }),
+                _react2.default.createElement(_Dir2.default, { lines: lines })
+            );
+        }
+    }]);
+
+    return Page;
+}(_react2.default.Component);
+
+_reactDom2.default.render(_react2.default.createElement(Page, null), document.querySelector('#content'));
+
+/***/ }),
+
+/***/ 98:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _axios = __webpack_require__(12);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_axios2.default.interceptors.request.use(function (config) {
+    // Do something before request is sent
+    console.log('发出请求');
+    return config;
+}, function (error) {
+    console.log('请求失败');
+    // Do something with request error
+    return Promise.reject(error);
+});
+
+// Add a response interceptor
+_axios2.default.interceptors.response.use(function (response) {
+    console.log('请求成功', response);
+    // Do something with response data
+    return response;
+}, function (error) {
+    console.log('请求失败', error);
+    // Do something with response error
+    return Promise.reject(error);
+});
+
+/***/ }),
+
 /***/ 99:
 /***/ (function(module, exports) {
 
@@ -342,4 +392,4 @@ exports.default = Path;
 
 /***/ })
 
-},[93]);
+},[97]);
