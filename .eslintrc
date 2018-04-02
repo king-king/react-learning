@@ -12,6 +12,10 @@
         "import/no-unresolved": 0,
         "import/extensions": 0,
         "react/jsx-indent": [0, 4],
-        "jsx-quotes": [2, "prefer-single"]
+        "jsx-quotes": [2, "prefer-single"],
+        "no-unused-expressions": ["error", {
+            "allowShortCircuit": true,
+            "allowTernary": true
+        }]
     }
 }
