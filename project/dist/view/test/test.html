@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="content">
+    </div>
+    <script>
+        window.onerror = function (message, source, lineno, colno, error) {
+            console.log(message, source, lineno, colno, error);
+            var img = new Image();
+            img.src = '/img.png?message=' + encodeURIComponent(message);
+        }
+
+    </script>
+    <script type="text/javascript" src="/project/dist/static/js/manifest.js"></script>
+    <script type="text/javascript" src="/project/dist/static/js/libs.js"></script>
+    <script type="text/javascript" src="/project/dist/static/js/test/test/main.js"></script>
+</body>
+
+</html>
