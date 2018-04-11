@@ -5,8 +5,10 @@ class App extends React.Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        this.setState({ ok: true });
+    }
     render() {
-        var a = 23142342 / fasdfs;
         return (
             <div>hello word</div>
         );
