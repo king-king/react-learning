@@ -5,6 +5,9 @@ class App extends React.Component {
     constructor(props) {
         super(props);
     }
+    shouldComponentUpdate(){
+        return true;
+    }
     componentDidMount() {
         this.setState({ ok: true });
     }
